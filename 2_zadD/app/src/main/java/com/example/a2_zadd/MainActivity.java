@@ -50,6 +50,5 @@ public class MainActivity extends AppCompatActivity {
                 txt.setText("Koszt zamówienia wynosi " + koszt +" zł");
             }
         });
-
     }
 }
