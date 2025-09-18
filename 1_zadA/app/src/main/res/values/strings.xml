@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">1_zadA</string>
+    <string name="textView">Hello</string>
+    <string name="btn">kliknij_mnie</string>
+</resources>
