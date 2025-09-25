@@ -1,7 +1,6 @@
 package com.example.a2_zadf;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -10,9 +9,6 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,20 +31,24 @@ public class MainActivity extends AppCompatActivity {
         img = findViewById(R.id.img);
 
         btn.setOnClickListener(v -> {
-            if (weight.getText().toString().isEmpty() || height.getText().toString().isEmpty()){
-                Toast.makeText(this, "Niepoprawna waga lub wzrost", Toast.LENGTH_SHORT).show();
+            try{
+                if (weight.getText().toString().isEmpty() || height.getText().toString().isEmpty()) throw new Exception();
+                else {
+                    float w =Float.parseFloat(weight.getText().toString());
+                    float h = Float.parseFloat(height.getText().toString());
+                    float bmi = BMI(w, h);
+                    if(bmi < 0 || h < 0 || w < 0) throw new Exception();
+                    txt.setText(getResources().getString(R.string.bmi) + bmi);
+                    if (bmi < 18.5) img.setImageResource(R.drawable.low);
+                    else if (bmi >= 18.5 && bmi <= 24.9) img.setImageResource(R.drawable.normal);
+                    else img.setImageResource(R.drawable.over);
+                }
             }
-            else {
-                float bmi = BMI(Float.parseFloat(weight.getText().toString()), Float.parseFloat(height.getText().toString()));
-                txt.setText("Twoje BMI: " + String.valueOf(bmi));
-                if (bmi < 18.5) img.setImageResource(R.drawable.low);
-                else if (bmi > 18.5 && bmi < 24.9) img.setImageResource(R.drawable.normal);
-                else img.setImageResource(R.drawable.over);
+            catch (Exception e){
+                Toast.makeText(this, getResources().getString(R.string.warn), Toast.LENGTH_SHORT).show();
             }
+
         });
-
-
-
     }
     public float BMI(float weight, float height){
         return weight/(height*height);

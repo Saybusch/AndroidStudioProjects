@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">2_zadF</string>
+    <string name="bmi">Twoje BMI: </string>
+    <string name="weight">Waga (kg)</string>
+    <string name="height">Wzrost (m)</string>
+    <string name="calc">Oblicz</string>2
+    <string name="img">Obraz</string>
+    <string name="warn">Niepoprawna waga lub wzrost</string>
 </resources>
