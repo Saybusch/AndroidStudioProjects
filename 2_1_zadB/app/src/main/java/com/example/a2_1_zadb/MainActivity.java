@@ -63,7 +63,10 @@ public class MainActivity extends AppCompatActivity {
     }
     public void squareRoot(String edit){
         int liczba = Integer.parseInt(edit);
-        if(liczba > 0) txt.setText(String.valueOf(Math.sqrt(liczba)));
+        if(liczba > 0) {
+            String wynik = "\\" + '/' + liczba + "=" + String.valueOf(Math.sqrt(liczba));
+            txt.setText(wynik);
+        }
         else alert();
     }
     public void alert(){

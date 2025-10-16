@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                     float w =Float.parseFloat(weight.getText().toString());
                     float h = Float.parseFloat(height.getText().toString());
                     float bmi = BMI(w, h);
-                    if(bmi < 0 || h < 0 || w < 0) throw new Exception();
+                    if(bmi < 0 || h <= 0 || w <= 0) throw new Exception();
                     txt.setText(getResources().getString(R.string.bmi) + bmi);
                     if (bmi < 18.5) img.setImageResource(R.drawable.low);
                     else if (bmi >= 18.5 && bmi <= 24.9) img.setImageResource(R.drawable.normal);
