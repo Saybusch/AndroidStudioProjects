@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 int foods = Integer.parseInt(wyzywienie.getText().toString());
                 double suma = getIn + foods + transfer;
                 if (dodatkowe.isChecked()) suma += (suma * 0.2);
-                txt.setText("Szacowany koszt wakacyjnego wyjazdu: " + String.valueOf(koszty()) + "zł");
+                txt.setText("Szacowany koszt wakacyjnego wyjazdu: " + String.valueOf(Math.round(koszty()) + "zł"));
             }
             catch (Exception e) {
                 Toast.makeText(this, e.toString().substring(20), Toast.LENGTH_SHORT).show();
