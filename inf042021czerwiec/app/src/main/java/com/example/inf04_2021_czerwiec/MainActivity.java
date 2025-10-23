@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 answer.setText("Nieprawidłowy adres e-mail");
             }
             else{
-                if(pass.getText().toString() != passRepeat.getText().toString()){
+                if(!pass.getText().toString().equals(passRepeat.getText().toString())){
                     answer.setText("Hasło się różnią");
                 }
                 else {
