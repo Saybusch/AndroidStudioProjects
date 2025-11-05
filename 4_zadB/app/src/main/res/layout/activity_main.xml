@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:layout_margin="10dp">
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TableRow style="@style/checks">
+                <Button android:id="@+id/btn1" style="@style/btn" android:text="dokładnie 3 cyfrry ?"/>
+                <TextView android:id="@+id/ans1" style="@style/txtview"/>
+            </TableRow>
+            <TableRow style="@style/checks">
+                <Button android:id="@+id/btn2" style="@style/btn" android:text="bez znaków białych ?"/>
+                <TextView android:id="@+id/ans2" style="@style/txtview"/>
+            </TableRow>
+            <TableRow style="@style/checks">
+                <Button android:id="@+id/btn3" style="@style/btn" android:text="długość conajmniej 5 znaków w tym co najmniej 3 znaki specjalne ? "/>
+                <TextView android:id="@+id/ans3" style="@style/txtview"/>
+            </TableRow>
+            <TableRow style="@style/checks">
+                <Button android:id="@+id/btn4" style="@style/btn" android:text="poprawny format kodu ? "/>
+                <TextView android:id="@+id/ans4" style="@style/txtview"/>
+            </TableRow>
+            <TableRow style="@style/checks">
+                <Button android:id="@+id/btn5" style="@style/btn" android:text="poprawny pesel ? "/>
+                <TextView android:id="@+id/ans5" style="@style/txtview"/>
+            </TableRow>
+            <TableRow style="@style/checks">
+                <Button android:id="@+id/btn6" style="@style/btn" android:text="poprawny numer dowodu ? "/>
+                <TextView android:id="@+id/ans6" style="@style/txtview"/>
+            </TableRow>
+            <TableRow style="@style/checks">
+                <Button android:id="@+id/btn7" style="@style/btn" android:text="data format dd:mm:rrrr ? "/>
+                <TextView android:id="@+id/ans7" style="@style/txtview"/>
+            </TableRow>
+        </TableLayout>
+
+
+</LinearLayout>

@@ -10,34 +10,24 @@
 
     <EditText
         android:id="@+id/ile_osob"
-        android:layout_width="match_parent"
-        android:inputType="number"
-        android:layout_height="wrap_content"
+        style="@style/EditText"
         android:hint="Liczba osób biorących udział w wyjeździe"
         android:layout_marginTop="40dp"/>
     <EditText
         android:id="@+id/ile_dni"
-        android:layout_width="match_parent"
-        android:inputType="number"
-        android:layout_height="wrap_content"
+        style="@style/EditText"
         android:hint="Liczba dni wyjazdu"/>
     <EditText
         android:id="@+id/zakwaterowanie"
-        android:layout_width="match_parent"
-        android:inputType="number"
-        android:layout_height="wrap_content"
+        style="@style/EditText"
         android:hint="Koszt zakwaterowania za osobę na dzień"/>
     <EditText
         android:id="@+id/transport"
-        android:layout_width="match_parent"
-        android:inputType="number"
-        android:layout_height="wrap_content"
+        style="@style/EditText"
         android:hint=" Koszt transportu za osobę"/>
     <EditText
         android:id="@+id/wyzywienie"
-        android:layout_width="match_parent"
-        android:inputType="number"
-        android:layout_height="wrap_content"
+        style="@style/EditText"
         android:hint="Koszt wyżywienia za osobę na dzień"/>
     <CheckBox
         android:id="@+id/dodatkowe"
