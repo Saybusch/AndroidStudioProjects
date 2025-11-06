@@ -11,6 +11,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.Set;
+
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         TextView txt5 = findViewById(R.id.ans5);
         TextView txt6 = findViewById(R.id.ans6);
         TextView txt7 = findViewById(R.id.ans7);
-        String pass = password.getText().toString();
         btn1.setOnClickListener(v -> {
+            String pass = password.getText().toString();
             int num = 0;
             for(int i = 0; i < pass.length(); i++){
                 char letter = pass.toCharArray()[i];
@@ -43,16 +45,18 @@ public class MainActivity extends AppCompatActivity {
             else txt1.setText("NIE");
         });
         btn2.setOnClickListener(v -> {
-            boolean correct = false;
+            String pass = password.getText().toString();
+            boolean incorrect = false;
             for(int i = 0; i < pass.length(); i++){
                 char letter = pass.toCharArray()[i];
-                correct = Character.isWhitespace(letter);
-                if(correct) break;
+                incorrect = Character.isWhitespace(letter);
+                if(incorrect) break;
             }
-            if(correct) txt2.setText("NIE");
+            if(incorrect) txt2.setText("NIE");
             else txt2.setText("TAK");
         });
         btn3.setOnClickListener(v -> {
+            String pass = password.getText().toString();
             int special = 0;
             String specialCharacters = "!@#$%^&*()?";
             for(int i = 0; i < pass.length(); i++){
@@ -63,11 +67,15 @@ public class MainActivity extends AppCompatActivity {
             else txt3.setText("NIE");
         });
         btn4.setOnClickListener(v -> {
+            String pass = password.getText().toString();
             boolean correct = false;
             for(int i = 0; i < pass.length(); i++){
                 char letter = pass.toCharArray()[i];
                 if (i < 2) correct = Character.isDigit(letter);
-                else if(i == 2) correct = pass.contains("-");
+                else if(i == 2) {
+                    correct = pass.contains("-");
+                    if(!correct) break;
+                }
                 else if(i < 6) correct = Character.isDigit(letter);
                 else correct = false;
             }
@@ -75,24 +83,40 @@ public class MainActivity extends AppCompatActivity {
             else txt4.setText("NIE");
         });
         btn5.setOnClickListener(v -> {
+            String pass = password.getText().toString();
             boolean onlyNumber = false;
             for(int i = 0; i < pass.length(); i++){
                 char letter = pass.toCharArray()[i];
                 onlyNumber = Character.isDigit(letter);
             }
-            if(pass.length() == 1 && onlyNumber) txt5.setText("TAK");
+            if(pass.length() == 11 && onlyNumber) txt5.setText("TAK");
             else txt5.setText("NIE");
         });
         btn6.setOnClickListener(v -> {
-            boolean correct = false;
+            String pass = password.getText().toString();
+            int upperCase = 0, digit = 0;
             for(int i = 0; i < pass.length(); i++){
                 char letter = pass.toCharArray()[i];
-                if(i < 3) correct = Character.isUpperCase(letter);
-                else if (i < 7) correct = Character.isDigit(letter);
-                else correct = false;
+                if(i < 3 && Character.isUpperCase(letter)) upperCase++;
+                else if (i < 9 && Character.isDigit(letter)) digit++;
+                else {upperCase = 0; digit = 0;}
             }
-            if(pass.length() == 1 && correct) txt6.setText("TAK");
+            if(upperCase == 3 && digit == 6) txt6.setText("TAK");
             else txt6.setText("NIE");
+        });
+        btn7.setOnClickListener(v -> {
+            String pass = password.getText().toString();
+            String regex = "^(0[1-9]|[1-2][0-9]|3[0-1]):(0[1-9]|1[0-2]):(\\d{4})";
+            boolean correct = false;
+            int dd = Integer.parseInt(pass.substring(0, 2));
+            int mm = Integer.parseInt(pass.substring(3, 5));
+            int yyyy = Integer.parseInt(pass.substring(6, 10));
+            Set<Integer> months = Set.of(4, 6, 9, 11);
+            if(mm==2 && dd < 29) correct = true;
+            if (months.contains(mm) && dd < 31) correct = true;
+            if((yyyy % 4 == 0 && yyyy % 100 != 0) || (yyyy % 400 == 0) && (mm == 2 && dd < 30)) correct = true;
+            if(pass.matches(regex) && correct) txt7.setText("TAK");
+            else txt7.setText("NIE");
         });
     }
 }
