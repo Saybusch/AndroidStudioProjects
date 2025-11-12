@@ -1,6 +1,8 @@
 package com.example.a4_zada;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.text.method.PasswordTransformationMethod;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     Button btn;
     TextView txt;
     ToggleButton tg;
+    TextView power;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         btn = findViewById(R.id.btn);
         txt = findViewById(R.id.txt);
         tg = findViewById(R.id.tg);
+        power = findViewById(R.id.strength);
 
         tg.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -69,5 +73,37 @@ public class MainActivity extends AppCompatActivity {
                 txt.setText("Hasło nie spełnia warunków");
             }
         });
+        edit.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                int strength = checkStrength(edit.getText().toString());
+                if (strength < 5) power.setText("Hasło słabe");
+                else if (strength < 10) power.setText("Hasło średnie");
+                else if (strength < 20) power.setText("Hasło dobre");
+                else power.setText("Hasło silne");
+            }
+        });
+    }
+    public int checkStrength(String password){
+        int pow = 0;
+        if(password.length() >= 8) pow++;
+        String characters = "!@#$%^&*()-+=";
+        for (int i = 0; i < password.length(); i++){
+            char letter = password.toCharArray()[i];
+            if (Character.isDigit(letter)) pow++;
+            if (Character.isUpperCase(letter)) pow++;
+            if(characters.indexOf(letter) != -1) pow += 2;
+        }
+        return pow;
     }
 }
