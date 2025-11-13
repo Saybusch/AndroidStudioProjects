@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:layout_margin="20dp">
+
+    <EditText
+        android:id="@+id/edit"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"/>
+    <ToggleButton
+        android:id="@+id/toggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/edit"
+        android:textOff="SHOW"
+        android:textOn="HIDE"/>
+    <TextView
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit"
+        android:layout_marginTop="50dp"
+        android:text="Siła Hasła"
+        android:textSize="28sp"/>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:progress="0"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_below="@id/progress"
+        android:layout_marginTop="20dp"
+        android:max="5"/>
+    <TextView
+        android:id="@+id/lengthPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/progressBar"
+        android:text="Długość hasła: 0"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
+    <Button
+        android:id="@+id/clearAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lengthPass"
+        android:text="Wyczyść"/>
+</RelativeLayout>
