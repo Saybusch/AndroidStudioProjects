@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eurojackpot" />
+    <EditText
+        android:id="@+id/firstFive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="5 liczb z zakresu od 1 do 50"/>
+    <EditText
+        android:id="@+id/secondTwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="2 liczby z zakresu od 1 do 10"/>
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wyślij losy"/>
+    <TextView
+        android:id="@+id/txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
