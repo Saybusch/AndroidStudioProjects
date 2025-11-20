@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     EditText edit1, edit2;
     Button btn;
     TextView txt;
+    int win = 0, loss = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,9 +69,13 @@ public class MainActivity extends AppCompatActivity {
                 for(int i:guesses2) if(gamblings2.contains(i)) two++;
 
                 text.append("\nStopień wygranych: ");
-                text.append(winLevel(five, two));
+                String winLoss = winLevel(five, two);
+                text.append(winLoss);
 
+                if (winLoss != "No winnings") win++;
+                else loss++;
 
+                text.append("\nWygrane: " + win + "\nPrzegrane: " + loss);
 
                 txt.setText(text);
             }
