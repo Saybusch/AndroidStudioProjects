@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:padding="30dp">
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Zgadnij słowo!"
+        android:textAlignment="center"
+        android:textSize="32sp"/>
+    <TextView
+        android:id="@+id/wins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wygrane: 0"
+        android:layout_below="@id/title"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:id="@+id/guesses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Liczba zgadnięć: 0"
+        android:layout_below="@id/wins"
+        android:layout_centerHorizontal="true"/>
+    <Button
+        android:id="@+id/send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wyślij"
+        android:layout_below="@+id/word" />
+    <Button
+        android:id="@+id/randomSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wybierz losowe słowo ze słownika"
+        android:layout_below="@+id/word"
+        android:layout_toEndOf="@+id/send"/>
+    <EditText
+        android:id="@+id/word"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Wpisz tu twoje słowo"
+        android:layout_below="@id/wins"
+        android:layout_marginTop="20dp"/>
+    <TextView
+        android:id="@+id/displayWord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Twoje słowo to: ..."
+        android:layout_below="@id/send"
+        android:textSize="24sp"
+        android:visibility="gone"
+        android:layout_marginTop="20dp"/>
+    <EditText
+        android:id="@+id/typeGuess"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Wpisz jakie to jest według ciebie słowo"
+        android:layout_below="@id/displayWord"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/confirmGuess"
+        android:visibility="gone"/>
+    <Button
+        android:id="@+id/confirmGuess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wyślij rozwiązanie"
+        android:layout_below="@id/typeGuess"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/verdict"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+</RelativeLayout>
