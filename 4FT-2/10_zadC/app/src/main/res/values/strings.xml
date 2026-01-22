@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">10_zadC</string>
+    <string-array name="cheesess">
+        <item>Chedar</item>
+        <item>Masdamer</item>
+        <item>Sokol</item>
+        <item>Królewski</item>
+        <item>Other</item>
+    </string-array>
+</resources>

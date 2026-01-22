@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">10_zadA</string>
+    <string-array name="list_car">
+        <item>BMW seria X</item>
+        <item>BMW seria Y</item>
+        <item>BMW seria XY</item>
+        <item>Audi seria X</item>
+        <item>Audi seria Y</item>
+        <item>Audi seria XY</item>
+        <item>Mercedes seria X</item>
+        <item>Mercedes seria XY</item>
+        <item>Lexus</item>
+        <item>Volvo</item>
+        <item>Jaguar</item>
+        <item>Porsche</item>
+    </string-array>
+</resources>
