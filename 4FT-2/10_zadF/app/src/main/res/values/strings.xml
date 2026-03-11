@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">10_zadF</string>
+    <string-array name="list_kot">
+        <item>kot 1</item>
+        <item>kot 2</item>
+        <item>kot 3</item>
+        <item>kot 4</item>
+        <item>kot 5</item>
+        <item>kot 6</item>
+    </string-array>
 </resources>

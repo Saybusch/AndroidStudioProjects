@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     ListView lista;
     Switch zmiennik;
     ArrayAdapter adapter;
-    ArrayList<String> los = new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,8 +32,7 @@ public class MainActivity extends AppCompatActivity {
         });
         lista = findViewById(R.id.lista);
         zmiennik = findViewById(R.id.zmiennik);
-        for(int i = 0; i < 5; i++) los.add("kot");
-        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, los);
+        adapter = new ArrayAdapter(this, R.layout.list_item, R.id.list_item_1 , getResources().getStringArray(R.array.list_kot));
         lista.setAdapter(adapter);
         zmiennik.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
