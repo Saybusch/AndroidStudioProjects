@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">11_zadB</string>
+    <string name="req1">
+        Krzyk (norw. Skrik) – obraz ekspresjonistyczny namalowany w 1893 r. przez norweskiego artystę Edvarda
+        Muncha. Wielu krytyków sztuki uznało Krzyk za największe dzieło Muncha. Ich zdaniem obraz przedstawia
+        współczesnego człowieka przeszytego bólem egzystencjalnym. Krajobraz w tle przedstawia fiord w pobliżu
+        Oslo, widoczny ze wzgórza Ekeberg. Obrazowi nadawano też tytuł Płacz. Krzyk, obok takich obrazów jak
+        Mona Lisa Leonarda da Vinci czy Słoneczniki Vincenta van Gogha, należy do najbardziej znanych obrazów
+        na świecie. Jest uważany za arcydzieło ekspresjonizmu.
+    </string>
+    <string name="req2">
+        Gwiaździsta noc (hol. De sterrennacht) – obraz olejny Vincenta van Gogha (nr kat.: F 612, JH 1731)
+        namalowany w czerwcu 1889 roku podczas pobytu artysty w miejscowości Saint-Rémy na dobrowolnej terapii
+        psychiatrycznej. Obraz Gwiaździsta noc, jako jedno z nielicznych dzieł Van Gogha, nie został namalowany
+        z natury, ale całkowicie z pamięci i dzięki wyobraźni autora. Jest jednym z najsłynniejszych jego dzieł.
+        Stał się przedmiotem utworów poetyckich, prozy oraz piosenki „Vincent (Starry, Starry Night)” Dona McLeana.
+    </string>
+</resources>
