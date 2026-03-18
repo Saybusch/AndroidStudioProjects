@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <TableRow>
+        <ImageView
+            android:id="@+id/imgView1"
+            android:src="@drawable/niebieski_smok"
+            android:tag="@drawable/niebieski_smok"
+            android:contentDescription="niebieski smok"
+            style="@style/obraz"/>
+        <ImageView
+            android:id="@+id/imgView2"
+            android:src="@drawable/karlik_szponiasty"
+            android:tag="@drawable/karlik_szponiasty"
+            android:contentDescription="karlik szponiasty"
+            style="@style/obraz"/>
+        <ImageView
+            android:id="@+id/imgView3"
+            android:src="@drawable/dziobak"
+            android:contentDescription="dziobak"
+            style="@style/obraz"/>
+    </TableRow>
+    <TableRow>
+        <ImageView
+            android:id="@+id/imgView4"
+            android:src="@drawable/wyrak"
+            android:contentDescription="wyrak"
+            style="@style/obraz"/>
+        <ImageView
+            android:id="@+id/imgView5"
+            android:src="@drawable/golec"
+            android:contentDescription="golec"
+            style="@style/obraz"/>
+        <ImageView
+            android:id="@+id/imgView6"
+            android:src="@drawable/zaba_szklana"
+            android:contentDescription="żaba szklana"
+            style="@style/obraz"/>
+    </TableRow>
+</TableLayout>
