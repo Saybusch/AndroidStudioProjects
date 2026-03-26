@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             for(int i = 0; i < 5; i++) {
                 values.add(random.nextInt(6)+1);
                 ImageView img = findViewById(images[i]);
-                img.setImageResource(resources[values.get(i)]);
+                img.setImageResource(resources[values.get(i)-1]);
             }
             for(int i = 1; i <= 6; i++) {
                 int total = 0;
@@ -54,6 +54,16 @@ public class MainActivity extends AppCompatActivity {
             }
             scoreNow.setText("Wynik tego losowania: " + suma);
             globalSuma += suma;
+            scoreGlobal.setText("Wynik gry: " + globalSuma);
+        });
+        resetGame.setOnClickListener(v -> {
+            for(int i = 0; i < 5; i++) {
+                ImageView img = findViewById(images[i]);
+                img.setImageResource(R.drawable.question);
+            }
+            globalSuma = 0;
+            scoreNow.setText("Wynik tego losowania: ");
+            scoreGlobal.setText("Wynik gry: ");
         });
     }
 }
