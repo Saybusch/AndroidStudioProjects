@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:layout_margin="25dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        android:text="BIBLIOTEKA"/>
+    <EditText
+        android:id="@+id/tytulEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tytul"/>
+    <EditText
+        android:id="@+id/autorEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Autor"/>
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DODAJ KSIĄŻKĘ"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kliknij ksiażkę, aby ją usunąć"/>
+    <ListView
+        android:id="@+id/lista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

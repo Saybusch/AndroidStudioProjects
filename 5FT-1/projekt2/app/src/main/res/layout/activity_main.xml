@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:layout_margin="20dp">
+    <EditText
+        android:id="@+id/inputTxt"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:inputType="textMultiLine"/>
+    <TextView
+        android:id="@+id/barLimit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Limit znaków: 20"/>
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progress="20"
+        android:max="50"/>
+    <TextView
+        android:id="@+id/resultTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Skrócony tekst pojawi się tutaj"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"/>
+    <TextView
+        android:id="@+id/amountChars"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Liczba znaków: 0"/>
+    <TextView
+        android:id="@+id/amountWords"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Liczba słów: 0"/>
+</LinearLayout>
